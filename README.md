@@ -36,7 +36,7 @@ This full-stack application is built with:
 - **C#**: Backend programming language
 - **JWT Authentication**: For secure user authentication
 - **PostgreSQL**: Database for data storage
-- **Entity Framework**: ORM for database operations
+- **ADO.NET**: Data access technology for direct database operations and custom SQL queries
 
 ## Project Structure
 
