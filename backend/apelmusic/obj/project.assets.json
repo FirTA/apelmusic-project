@@ -2306,11 +2306,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\apelmusicapi\\apelmusic\\apelmusic.csproj",
+      "projectUniqueName": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\apelmusic.csproj",
       "projectName": "apelmusic",
-      "projectPath": "D:\\Git\\apelmusicapi\\apelmusic\\apelmusic.csproj",
+      "projectPath": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\apelmusic.csproj",
       "packagesPath": "C:\\Users\\TUF\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\apelmusicapi\\apelmusic\\obj\\",
+      "outputPath": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

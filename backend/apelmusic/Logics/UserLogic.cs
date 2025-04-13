@@ -380,7 +380,7 @@ namespace apelmusic.Logics
             }
 
             // activate the user
-            query = "UPDATE apelmusic.user SET status=1 WHERE email=@email;";
+            query = "UPDATE apelmusic.user SET status=true WHERE email=@email;";
             sqlParams = new NpgsqlParameter[]
             {
                     new NpgsqlParameter("@email", NpgsqlDbType.Varchar) { Value = email },

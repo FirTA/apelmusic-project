@@ -1,57 +1,61 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Git\\apelmusicapi\\",
+  "WorkspaceRootPath": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\logics\\courselogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\logics\\courselogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\logics\\invoicelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\logics\\invoicelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\models\\crud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\models\\crud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\logics\\userlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\logics\\userlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\logics\\emaillogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\logics\\emaillogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\controllers\\paymentmethodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\controllers\\paymentmethodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\git\\apelmusicapi\\apelmusic\\logics\\jwtlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\apelmusic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\apelmusic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\controllers\\paymentmethodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\controllers\\paymentmethodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\models\\crud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\models\\crud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\logics\\userlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\logics\\userlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\logics\\emaillogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\logics\\emaillogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\logics\\invoicelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\logics\\invoicelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\logics\\courselogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\logics\\courselogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\logics\\jwtlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\logics\\jwtlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -66,172 +70,177 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Invoice.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Models\\Invoice.cs",
-              "RelativeDocumentMoniker": "apelmusic\\Models\\Invoice.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Models\\Invoice.cs",
-              "RelativeToolTip": "apelmusic\\Models\\Invoice.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:10:30.717Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CourseController.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Controllers\\CourseController.cs",
-              "RelativeDocumentMoniker": "apelmusic\\Controllers\\CourseController.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Controllers\\CourseController.cs",
-              "RelativeToolTip": "apelmusic\\Controllers\\CourseController.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAvwFEAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T08:42:08.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "EmailLogic.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\EmailLogic.cs",
-              "RelativeDocumentMoniker": "apelmusic\\Logics\\EmailLogic.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\EmailLogic.cs",
-              "RelativeToolTip": "apelmusic\\Logics\\EmailLogic.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T08:23:27.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "apelmusic\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Controllers\\UserController.cs",
-              "RelativeToolTip": "apelmusic\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAwwJIAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T08:19:32.847Z",
+              "Title": "apelmusic.csproj",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\apelmusic.csproj",
+              "RelativeDocumentMoniker": "apelmusic\\apelmusic.csproj",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\apelmusic.csproj",
+              "RelativeToolTip": "apelmusic\\apelmusic.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-09T14:24:59.631Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "EmailLogic.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\EmailLogic.cs",
+              "RelativeDocumentMoniker": "apelmusic\\Logics\\EmailLogic.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\EmailLogic.cs",
+              "RelativeToolTip": "apelmusic\\Logics\\EmailLogic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T08:23:27.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "apelmusic\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\UserController.cs",
+              "RelativeToolTip": "apelmusic\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAQwG8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T08:19:32.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "InvoiceLogic.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\InvoiceLogic.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\InvoiceLogic.cs",
               "RelativeDocumentMoniker": "apelmusic\\Logics\\InvoiceLogic.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\InvoiceLogic.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\InvoiceLogic.cs",
               "RelativeToolTip": "apelmusic\\Logics\\InvoiceLogic.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAwwFkAAAAAAAAA",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAlwGAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T08:13:13.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "CourseLogic.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\CourseLogic.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\CourseLogic.cs",
               "RelativeDocumentMoniker": "apelmusic\\Logics\\CourseLogic.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\CourseLogic.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\CourseLogic.cs",
               "RelativeToolTip": "apelmusic\\Logics\\CourseLogic.cs",
-              "ViewState": "AQIAALUAAAAAAAAAAAAEwMUAAAANAAAA",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAAwKEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T08:12:55.07Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\appsettings.json",
+              "RelativeDocumentMoniker": "apelmusic\\appsettings.json",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\appsettings.json",
+              "RelativeToolTip": "apelmusic\\appsettings.json",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-09T05:35:02.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "apelmusic\\Controllers\\CourseController.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "apelmusic\\Controllers\\CourseController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAvwE8AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T08:42:08.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UserLogic.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\UserLogic.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\UserLogic.cs",
               "RelativeDocumentMoniker": "apelmusic\\Logics\\UserLogic.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\UserLogic.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\UserLogic.cs",
               "RelativeToolTip": "apelmusic\\Logics\\UserLogic.cs",
-              "ViewState": "AQIAADgBAAAAAAAAAADwv0EBAAAQAAAA",
+              "ViewState": "AQIAAHABAAAAAAAAAAApwIMBAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T07:59:38.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "InvoiceController.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Controllers\\InvoiceController.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\InvoiceController.cs",
               "RelativeDocumentMoniker": "apelmusic\\Controllers\\InvoiceController.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Controllers\\InvoiceController.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\InvoiceController.cs",
               "RelativeToolTip": "apelmusic\\Controllers\\InvoiceController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAewA8AAAATAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAQwA8AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T08:42:12.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T08:42:12.792Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "PaymentMethodController.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Controllers\\PaymentMethodController.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\PaymentMethodController.cs",
               "RelativeDocumentMoniker": "apelmusic\\Controllers\\PaymentMethodController.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Controllers\\PaymentMethodController.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\PaymentMethodController.cs",
               "RelativeToolTip": "apelmusic\\Controllers\\PaymentMethodController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAAABAAAAApAAAA",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAlwE8AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T08:42:16.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Course.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Models\\Course.cs",
-              "RelativeDocumentMoniker": "apelmusic\\Models\\Course.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Models\\Course.cs",
-              "RelativeToolTip": "apelmusic\\Models\\Course.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAowA4AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T07:37:25.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CRUD.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Models\\CRUD.cs",
-              "RelativeDocumentMoniker": "apelmusic\\Models\\CRUD.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Models\\CRUD.cs",
-              "RelativeToolTip": "apelmusic\\Models\\CRUD.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAAACgAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:28:54.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "JwtLogic.cs",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\JwtLogic.cs",
-              "RelativeDocumentMoniker": "apelmusic\\Logics\\JwtLogic.cs",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\Logics\\JwtLogic.cs",
-              "RelativeToolTip": "apelmusic\\Logics\\JwtLogic.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAcwA8AAABKAAAA",
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "apelmusic\\Models\\Course.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\Course.cs",
+              "RelativeToolTip": "apelmusic\\Models\\Course.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA7wA4AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T08:32:03.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T07:37:25.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CRUD.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\CRUD.cs",
+              "RelativeDocumentMoniker": "apelmusic\\Models\\CRUD.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\CRUD.cs",
+              "RelativeToolTip": "apelmusic\\Models\\CRUD.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAlwGcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:28:54.933Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Git\\apelmusicapi\\apelmusic\\appsettings.json",
-              "RelativeDocumentMoniker": "apelmusic\\appsettings.json",
-              "ToolTip": "D:\\Git\\apelmusicapi\\apelmusic\\appsettings.json",
-              "RelativeToolTip": "apelmusic\\appsettings.json",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-09T05:35:02.776Z",
-              "EditorCaption": ""
+              "Title": "Invoice.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\Invoice.cs",
+              "RelativeDocumentMoniker": "apelmusic\\Models\\Invoice.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\Invoice.cs",
+              "RelativeToolTip": "apelmusic\\Models\\Invoice.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:10:30.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "JwtLogic.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\JwtLogic.cs",
+              "RelativeDocumentMoniker": "apelmusic\\Logics\\JwtLogic.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\JwtLogic.cs",
+              "RelativeToolTip": "apelmusic\\Logics\\JwtLogic.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAcwA8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T08:32:03.83Z"
             }
           ]
         }

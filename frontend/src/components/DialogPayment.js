@@ -22,7 +22,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function DialogProfile({
+export default function DialogPayment({
   open,
   onClose,
   setIdPayment,
@@ -34,8 +34,9 @@ export default function DialogProfile({
   const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-    getPayment();
-  }, []);
+    if(open)
+      getPayment();
+  }, [open]);
 
   const getPayment = async () => {
     try {

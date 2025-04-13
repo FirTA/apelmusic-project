@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LJ1pgb9r+Ut0XX+2xF3UuT8X2vr/9Y2/m+QU4TAZdkr6+IozZpao/oQUsm1FvbWk0C2FAOWxRkRmGsAicNJqCw==",
+  "dgSpecHash": "GQoWcje2FvOOYcaB4wjj+YiSS6hxEotMpYgwqI49rtnCMegChUhYroonU//2IWPH4XU0QfrwRKu05K+khHLsWA==",
   "success": true,
-  "projectFilePath": "D:\\Git\\apelmusicapi\\apelmusic\\apelmusic.csproj",
+  "projectFilePath": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\apelmusic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TUF\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
     "C:\\Users\\TUF\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.3\\microsoft.aspnetcore.authentication.jwtbearer.7.0.3.nupkg.sha512",
