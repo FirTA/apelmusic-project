@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    // console.log("AuthContext Validate token running...");
+    // console.log("this is .env", process.env.REACT_APP_API_URL);
     setLoadAuth(true);
     if (token) {
       // console.log("start validate token......");
