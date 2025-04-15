@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("apelmusic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63e5132f3c1d9816bbc192e52ca3fc5230774700")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57b573ee492c56706b781f36ad45266dfafc9080")]
 [assembly: System.Reflection.AssemblyProductAttribute("apelmusic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("apelmusic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
