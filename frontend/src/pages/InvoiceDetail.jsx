@@ -1,19 +1,12 @@
-import axios from "axios";
-import { APIRequest } from "../api/post";
-import { useState, useRef, useEffect, useContext } from "react";
-import { Link as RouterLink, useLocation, useParams } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { Link as RouterLink, useParams } from "react-router-dom";
 
-import MainFeaturedPost from "../components/MainFeaturedPost";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CardCourse from "../components/CardCourse";
 import SetContextHeader from "../components/SetContextHeader";
 import {
   styled,
   TableCell,
   Container,
-  Button,
-  Grid,
   Table,
   Box,
   Typography,
@@ -25,6 +18,7 @@ import TableHead from "@mui/material/TableHead";
 import TableBody from "@mui/material/TableBody";
 import TableRow from "@mui/material/TableRow";
 import { Stack } from "@mui/system";
+import invoiceServices from "../services/invoiceServices";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -44,7 +38,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 function InvoiceDetail() {
-  const { state } = useLocation();
   const [invoice, setInvoice] = useState({});
   const role = localStorage.getItem("role");
   const params = useParams();
@@ -106,11 +99,9 @@ function InvoiceDetail() {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
 
-  const getDetailInvoice = async () => {
+  const getDetailInvoice = useCallback(async () => {
     try {
-      const response = await APIRequest.get(
-        "/invoice/getDetailInvoice?id_invoice=" + params.id
-      );
+      const response = await invoiceServices.getDetailInvoice(params.id);
       setInvoice(response.data[0]);
       // console.log(response.data[0]);
     } catch (err) {
@@ -122,12 +113,14 @@ function InvoiceDetail() {
         console.log(`Error : ${err.message}`);
       }
     }
-  };
+  }, [params.id]);
 
   useEffect(() => {
     getDetailInvoice();
-  }, []);
-
+  }, [getDetailInvoice]);
+  useEffect(() => {
+    console.log("Initial data when the component is called:", invoice);
+  }, [invoice]);
   // useEffect(() => {
   //   console.log(invoice);
   // }, [invoice]);
@@ -158,7 +151,7 @@ function InvoiceDetail() {
             </RouterLink>
 
             <RouterLink
-              to={role == "admin" ? "/invoice" : "/invoiceuser"}
+              to={role === "admin" ? "/invoice" : "/invoiceuser"}
               style={{ textDecoration: "none", color: "#828282" }}
             >
               {"Invoice > "}

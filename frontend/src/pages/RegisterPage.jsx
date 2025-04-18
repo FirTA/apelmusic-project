@@ -14,6 +14,7 @@ import HeaderLogReg from "../components/HeaderLogReg";
 import SetContextHeader from "../components/SetContextHeader";
 import { APIRequest } from "../api/post";
 import { useNavigate } from "react-router-dom";
+import userServices from "../services/userServices";
 
 function RegisterPage() {
   const [user, setUser] = useState({
@@ -111,21 +112,14 @@ function RegisterPage() {
 
       // check email is register or not
       try {
-        let response = await APIRequest.post("/User/checkemail", {
-          email: user.email,
-        });
-        // console.log("response data: ", response.data);
-        if (response.data === true) {
-          // email sudah dipakai return error
-          // isRegister = true;
+        let emailCheck = await userServices.checkEmail({ email: user.email });
+        if (emailCheck.data === true) {
           handleErrorWithMsg("email", true, "email sudah digunakan!");
           return;
-        } else {
-          // isRegister = false;
-          handleErrorWithMsg("email", false, "");
         }
       } catch (error) {
-        console.log("error on check email", error);
+        console.error("Error checking email:", error);
+        return;
       }
     }
 
@@ -149,16 +143,11 @@ function RegisterPage() {
     // console.log("is valid data :", isValidData());
     if (isValidData()) {
       try {
-        let response = await APIRequest.post("/User/Registration", data);
-        // console.log("response registration :\n", response);
+        await userServices.register(data);
         handleClickOpen();
-        // navigate("/login");
       } catch (error) {
-        // console.log("error registration :\n", error);
+        console.error("Error during registration:", error);
       }
-      return;
-    } else {
-      return;
     }
 
     // let formData = new FormData();

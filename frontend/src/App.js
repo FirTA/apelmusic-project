@@ -8,7 +8,7 @@ import CategoryPage from "./pages/CategoryPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import CoursePage from "./pages/CoursePage";
 import EmailConfirmSuccess from "./pages/EmailConfirmSuccess";
-import Index from "./pages/Index";
+import HomePage from "./pages/HomePage";
 import Kelasku from "./pages/Kelasku";
 import Invoice from "./pages/Invoice";
 import InvoiceDetail from "./pages/InvoiceDetail";
@@ -55,8 +55,8 @@ function App() {
           </Route>
 
           {/* Guest Route */}
-          <Route path="/home" element={<Index />} />
-          <Route path="/" element={<Index />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/category/:id" element={<CategoryPage />} />
           <Route path="/course/:id" element={<CoursePage />} />
 

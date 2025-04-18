@@ -1,37 +1,24 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-
-import api from "../api/post";
-import { APIRequest } from "../api/post";
-import { useState, useRef, useEffect, useCallback } from "react";
-
-import MainFeaturedPost from "../components/MainFeaturedPost";
-import Header from "../components/Header";
+import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import CardCourse from "../components/CardCourse";
-import CoverCategory from "../components/CoverCategory";
-
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-
 import { useParams, useNavigate } from "react-router-dom";
-import { Container } from "@mui/system";
 import Alert from "@mui/material/Alert";
-
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import { Button, FormControl, InputLabel, Stack } from "@mui/material";
+import { Button, FormControl, Stack } from "@mui/material";
 import SetContextHeader from "../components/SetContextHeader";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import Collapse from "@mui/material/Collapse";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import courseServices from "../services/courseServices";
 
 export default function CoursePage() {
   const navigate = useNavigate();
@@ -111,23 +98,13 @@ export default function CoursePage() {
 
   const getCourseUser = async () => {
     try {
-      const response = await APIRequest.get(
-        "/course/getcartuser?id_user=" + formData.fk_id_user
-      );
-
+      const response = await courseServices.getCartUser(formData.fk_id_user);
       let courses = response.data.filter(
-        (course) => course.fk_id_course == params.id
+        (course) => course.fk_id_course === params.id
       );
       setCourseUser(courses);
-      // console.log(courses);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching user's courses:", err);
     }
   };
 
@@ -158,49 +135,26 @@ export default function CoursePage() {
 
   const getCourse = async () => {
     try {
-      const response = await APIRequest.get("/course/getcourse");
-
-      // handle success
+      const response = await courseServices.getCourse();
       let course = response.data.filter(
-        (course) => course.id_course == params.id
+        (course) => course.id_course === params.id
       );
       setCourse(course[0]);
       setBackdrop(false);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching course:", err);
     }
   };
 
   const getRecommendedCourse = async () => {
     try {
-      const response = await APIRequest.get("/course/getcourse");
-      // handle success
-
-      let recomendCourses = response.data.filter((recomend) => {
-        if (
-          recomend.fk_id_category == course.fk_id_category &&
-          recomend.id_course != course.id_course
-        ) {
-          return true;
-        } else {
-          return false;
-        }
-      });
+      const recomendCourses = await courseServices.getRecommendedCourses(
+        course.fk_id_category,
+        course.id_course
+      );
       setRecommendedCourse(recomendCourses);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching recommended courses:", err);
     }
   };
 
@@ -213,8 +167,7 @@ export default function CoursePage() {
     };
 
     try {
-      await APIRequest.post("/course/InsertCourseUser", data);
-
+      await courseServices.insertCourseUser(data);
       if (status) navigate("/checkout");
       else {
         setOpen(true);
@@ -222,7 +175,7 @@ export default function CoursePage() {
         setJadwal("");
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error saving course:", error);
     }
   };
 
@@ -315,7 +268,7 @@ export default function CoursePage() {
                     })}
                   </Select>
                 </FormControl>
-                {role != "peserta" ? (
+                {role !== "peserta" ? (
                   <Alert variant="filled" severity="error" sx={{ mt: 4 }}>
                     Anda harus login terlebih dahulu untuk membeli kelas ini!
                   </Alert>
@@ -343,7 +296,7 @@ export default function CoursePage() {
                     <Stack direction="row" spacing={2} sx={{ mt: 4 }}>
                       <Button
                         variant="outlined"
-                        disabled={jadwal == ""}
+                        disabled={jadwal === ""}
                         sx={{
                           textDecoration: "none",
                         }}
@@ -361,7 +314,7 @@ export default function CoursePage() {
                       </Button>
                       <Button
                         variant="contained"
-                        disabled={jadwal == ""}
+                        disabled={jadwal === ""}
                         sx={{
                           backgroundColor: "#5D5FEF",
                           textDecoration: "none",

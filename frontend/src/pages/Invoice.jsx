@@ -26,6 +26,7 @@ import TableBody from "@mui/material/TableBody";
 import TableRow from "@mui/material/TableRow";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import invoiceServices from "../services/invoiceServices";
 
 function createData(
   no,
@@ -133,43 +134,23 @@ function Invoice() {
 
   const getInvoice = async () => {
     try {
-      if (role == "admin") {
-        const response = await APIRequest.get("/invoice/getInvoice");
-        // console.log(response);
+      if (role === "admin") {
+        const response = await invoiceServices.getInvoice();
         setInvoice(response.data);
         setBackdrop(false);
       } else {
-        const response = await APIRequest.get(
-          "/invoice/getInvoice?id_user=" + id_user
-        );
-
+        const response = await invoiceServices.getInvoice(id_user);
         setInvoice(response.data);
         setBackdrop(false);
       }
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching invoices:", err);
     }
   };
 
   useEffect(() => {
     getInvoice();
   }, []);
-
-  // useEffect(() => {
-  //   console.log(
-  //     "data invoice :",
-  //     typeof invoice,
-  //     invoice,
-  //     "\n invoice length 0 :",
-  //     invoice.length === 0
-  //   );
-  // }, [invoice]);
 
   return (
     <>

@@ -25,6 +25,8 @@ import DialogPayment from "../components/DialogPayment";
 import pic from "../assets/email_success.png";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import courseServices from "../services/courseServices";
+import invoiceServices from "../services/invoiceServices";
 
 // Checkout page
 function CheckoutPage() {
@@ -101,19 +103,10 @@ function CheckoutPage() {
   };
 
   const handleCheck = async (id_course_user, check) => {
-    const data = {
-      check: !check,
-    };
-
     try {
-      let response = await APIRequest.put(
-        "/course/ChangeCheckedCourseUser?id_course_user=" + id_course_user,
-        data
-      );
-
-      // console.log(response);
+      await courseServices.changeCheckedCourseUser(id_course_user, !check);
     } catch (error) {
-      console.log(error);
+      console.error("Error updating check status:", error);
     }
   };
 
@@ -125,9 +118,7 @@ function CheckoutPage() {
 
   const getCartUser = async () => {
     try {
-      const response = await APIRequest.get(
-        "/course/getCartUser?id_user=" + id_user
-      );
+      const response = await courseServices.getCartUser(id_user);
       let carts = response.data;
 
       setTotalHarga(0);
@@ -153,31 +144,16 @@ function CheckoutPage() {
 
       setBackdrop(false);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching cart:", err);
     }
   };
 
   const handleDelete = async (id_course_user) => {
     try {
-      const response = APIRequest.delete(
-        "/course/deleteCourseUser?id_course_user=" + id_course_user
-      );
-
+      await courseServices.deleteCourseUser(id_course_user);
       setIdDeleted(id_course_user);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error deleting course:", err);
     }
   };
 
@@ -203,13 +179,10 @@ function CheckoutPage() {
     };
 
     try {
-      let response = await APIRequest.post("/invoice/addinvoice", data);
-
-      // console.log(response);
-      // console.log(data);
+      let response = await invoiceServices.addInvoice(data);
       navigate("/successpurchase/" + response.data);
     } catch (error) {
-      console.log(error);
+      console.error("Error creating invoice:", error);
     }
   };
 
@@ -230,7 +203,7 @@ function CheckoutPage() {
         <>
           <SetContextHeader />
           <Container maxWidth="lg" sx={{ mb: 20 }}>
-            {cartUser.length != 0 ? (
+            {cartUser.length !== 0 ? (
               <List sx={{ width: "100%", bgcolor: "background.paper" }}>
                 <ListItem disablePadding>
                   <ListItemButton
@@ -302,6 +275,7 @@ function CheckoutPage() {
                                       height="133px"
                                       width="200px"
                                       sx={{ borderRadius: "20px" }}
+                                      alt={cart.nama_course}
                                     />
                                   </Box>
                                 </>

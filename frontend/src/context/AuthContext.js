@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { APIRequest } from "../api/post";
-import { validateToken } from "../api/user";
+import userServices from "../services/userServices";
 
 const AuthContext = createContext();
 
@@ -9,21 +8,15 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(null);
   const [auth2, setAuth2] = useState("default");
 
-  // useEffect(() => {
-  //   console.log("===== AuthContext =====");
-  // }, []);
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     setLoadAuth(true);
     if (token) {
       // console.log("start validate token......");
-      validateToken(token)
+      userServices
+        .validateToken(token)
         .then((res) => {
           console.log("response validate token :\n", res);
-          APIRequest.defaults.headers.common[
-            "Authorization"
-          ] = `Bearer ${res.data.token}`;
           localStorage.setItem("token", res.data.token);
           setAuth(res.data);
         })

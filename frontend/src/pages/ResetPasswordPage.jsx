@@ -8,18 +8,11 @@ import {
   AlertTitle,
   Box,
 } from "@mui/material";
-import {
-  NavLink,
-  Link,
-  useNavigate,
-  useLocation,
-  useParams,
-} from "react-router-dom";
-import Header from "../components/Header";
+import { useNavigate, useParams } from "react-router-dom";
 import HeaderLogReg from "../components/HeaderLogReg";
 import SetContextHeader from "../components/SetContextHeader";
-import React, { useEffect, useState } from "react";
-import { APIRequest } from "../api/post";
+import React, { useState } from "react";
+import userServices from "../services/userServices";
 
 function ResetPasswordPage() {
   // const { state } = useLocation();
@@ -95,12 +88,10 @@ function ResetPasswordPage() {
     }
 
     try {
-      let response = await APIRequest.post("/User/resetpassword", data);
-      // console.log(response);
-
+      await userServices.resetPassword(data);
       handleClickOpen();
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.Error("Error during reset password:", err);
     }
   };
 

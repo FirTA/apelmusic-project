@@ -1,14 +1,11 @@
-import { Container, TextField, Typography, Button, Box } from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import Header from "../components/Header";
-import HeaderLogReg from "../components/HeaderLogReg";
 import pic from "../assets/email_success.png";
 import { Link as RouterLink, useParams } from "react-router-dom";
 import { HeaderContext } from "../context/HeaderContext";
 import { useContext, useEffect } from "react";
 import SetContextHeader from "../components/SetContextHeader";
-import { APIRequest as Axios } from "../api/user";
+import userServices from "../services/userServices";
 
 function EmailConfirmSuccess() {
   const { updateHeader } = useContext(HeaderContext);
@@ -32,10 +29,9 @@ function EmailConfirmSuccess() {
 
   const activateUser = async (token) => {
     try {
-      let response = await Axios.put("/User/activation/" + token);
-      // console.log(response);
-    } catch (error) {
-      console.log(error);
+      await userServices.activateUser(token);
+    } catch (err) {
+      console.error("Error during activation user ", err);
     }
   };
 

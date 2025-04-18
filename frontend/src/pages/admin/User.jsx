@@ -16,13 +16,11 @@ import {
   TextField,
   IconButton,
 } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
 import SettingsIcon from "@mui/icons-material/Settings";
-import { Container } from "@mui/system";
 import React, { useState, useEffect } from "react";
-import { APIRequest } from "../../api/post";
 import Footer from "../../components/Footer";
 import SetContextHeader from "../../components/SetContextHeader";
+import userServices from "../../services/userServices";
 
 export default function User() {
   const [users, setUsers] = useState([]);
@@ -37,56 +35,30 @@ export default function User() {
 
   const getUser = async () => {
     try {
-      const response = await APIRequest.get("/user/getadmin", {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      });
-      // console.log(response);
+      const response = await userServices.getAdmin();
       setUsers(response.data);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching admin users:", err);
     }
   };
 
   const saveToDb = async () => {
-    const data = {
-      nama_user: formData.nama_user,
-      email: formData.email,
-      password: formData.password,
-    };
-
     try {
-      let response = await APIRequest.post("/user/insertadmin", data);
-
+      await userServices.insertAdmin(formData);
       getUser();
       setOpen(false);
     } catch (error) {
-      console.log(error);
+      console.error("Error saving admin user:", error);
     }
   };
 
   const updateToDb = async () => {
-    const data = {
-      nama_user: formData.nama_user,
-      email: formData.email,
-      password: formData.password,
-    };
-
     try {
-      let response = await APIRequest.put(
-        "/user/updateadmin?id_user=" + idUser,
-        data
-      );
-
+      await userServices.updateAdmin(idUser, formData);
       getUser();
       setOpen(false);
     } catch (error) {
-      console.log(error);
+      console.error("Error updating admin user:", error);
     }
   };
 
@@ -95,19 +67,11 @@ export default function User() {
   }, []);
 
   const handleSwitch = async (id_user, status) => {
-    const data = {
-      status: !status,
-    };
-
     try {
-      let response = await APIRequest.put(
-        "/user/ChangeStatusAdmin?id_user=" + id_user,
-        data
-      );
-
+      await userServices.changeStatusAdmin(id_user, !status);
       getUser();
     } catch (error) {
-      console.log(error);
+      console.error("Error changing admin status:", error);
     }
   };
 
@@ -132,7 +96,7 @@ export default function User() {
     setOpen(true);
     setIsEdit(true);
 
-    let user = users.filter((user) => user.id_user == id_user);
+    let user = users.filter((user) => user.id_user === id_user);
 
     console.log(user);
 

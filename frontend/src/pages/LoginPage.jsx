@@ -8,14 +8,13 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import React, { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
-import Header from "../components/Header";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import HeaderLogReg from "../components/HeaderLogReg";
 import SetContextHeader from "../components/SetContextHeader";
-import { APIRequest } from "../api/post";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import userServices from "../services/userServices";
 
 function LoginPage() {
   const { auth, setAuth } = useAuth();
@@ -79,7 +78,7 @@ function LoginPage() {
       password: user.password,
     };
     try {
-      let response = await APIRequest.post("/User/login/", data);
+      let response = await userServices.login(data);
       // console.log(response);
       localStorage.setItem("id_user", response.data.id_user);
       localStorage.setItem("nama_user", response.data.nama_user);
@@ -88,22 +87,11 @@ function LoginPage() {
       localStorage.setItem("token", response.data.token);
       setResponse("success");
       setAuth(response.data);
-      APIRequest.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${response.data.token}`;
       handleClickOpen();
-
-      // pindah di handle close dialog
-      // if (response.data.role === "peserta") {
-      //   navigate("/home");
-      // } else if (response.data.role === "admin") {
-      //   navigate("/user");
-      // }
     } catch (error) {
       setResponse("error");
       setResponseMsg(error.response.data);
-      console.log("Error Login :\n", error);
-      console.log("Error data :\n", error.response.data);
+      console.error("Error Login:", error);
       handleClickOpen();
       // alert(error.response.data);
     }

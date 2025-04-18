@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: frontend-apelmusic
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8471/api
+    depends_on:
+      - backend
+
+  backend:
+    image: backend-apelmusic
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8471:8471"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      -       - ConnectionStrings__Default=Server=db;Database=NursePro;User ID=postgres;Password=zxcvbnm;TrustServerCertificate=True;Search Path=apelmusic;Pooling=true;
+    depends_on:
+      - db

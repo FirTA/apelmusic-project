@@ -1,13 +1,10 @@
 import { Container, TextField, Typography, Button, Box } from "@mui/material";
 import React from "react";
-import Header from "../components/Header";
-import HeaderLogReg from "../components/HeaderLogReg";
 import pic from "../assets/email_success.png";
 import { Link as RouterLink, useParams } from "react-router-dom";
 import { HeaderContext } from "../context/HeaderContext";
 import { useContext, useEffect } from "react";
 import SetContextHeader from "../components/SetContextHeader";
-import { APIRequest as Axios } from "../api/user";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import HomeIcon from "@mui/icons-material/Home";
 

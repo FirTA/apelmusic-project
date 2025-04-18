@@ -1,25 +1,15 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
+
 import React, { useEffect, useState } from "react";
 import SetContextHeader from "../components/SetContextHeader";
 import { useTheme } from "@mui/material/styles";
 import { Container, Stack } from "@mui/system";
 import Footer from "../components/Footer";
-import { APIRequest } from "../api/post";
 import { Link as RouterLink } from "react-router-dom";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import courseServices from "../services/courseServices";
 
 export default function Kelasku() {
   const [courseSaya, setCourseSaya] = useState([]);
@@ -64,9 +54,7 @@ export default function Kelasku() {
 
   const getCourseUser = async () => {
     try {
-      const response = await APIRequest.get(
-        "/course/getcourseuser?id_user=" + id_user
-      );
+      const response = await courseServices.getCourseUser(id_user);
       setCourseSaya(response.data);
       setBackdrop(false);
     } catch (err) {
@@ -96,7 +84,7 @@ export default function Kelasku() {
                 divider={<Divider orientation="horizontal" flexItem />}
                 spacing={2}
               >
-                {courseSaya.length != 0 ? (
+                {courseSaya.length !== 0 ? (
                   <>
                     {courseSaya.map((course, index) => (
                       <>
@@ -118,6 +106,7 @@ export default function Kelasku() {
                                   height="133px"
                                   width="200px"
                                   sx={{ borderRadius: "20px" }}
+                                  alt={course.nama_course}
                                 />
                               </RouterLink>
                             </>

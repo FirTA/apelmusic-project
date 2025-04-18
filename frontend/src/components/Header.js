@@ -14,19 +14,16 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import AppleIcon from "@mui/icons-material/Apple";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
 import { HeaderContext } from "../context/HeaderContext";
-import { AccountCircle } from "@mui/icons-material";
 import DialogProfile from "./DialogProfile";
 import useAuth from "../hooks/useAuth";
-import { APIRequest } from "../api/post";
+import { axiosInstance } from "../api/post";
 
 export default function Header() {
   const { header } = useContext(HeaderContext);
@@ -65,7 +62,7 @@ export default function Header() {
       // localStorage.removeItem("nama_user");
       // localStorage.removeItem("email");
       // localStorage.removeItem("role");
-      APIRequest.defaults.headers.common["Authorization"] = ``;
+      axiosInstance.defaults.headers.common["Authorization"] = ``;
       navigate("/login");
     } else {
       navigate("/login");

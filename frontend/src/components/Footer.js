@@ -10,9 +10,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import MailIcon from "@mui/icons-material/Mail";
-import { APIRequest } from "../api/post";
 import { Link as RouterLink } from "react-router-dom";
 import { HeaderContext } from "../context/HeaderContext";
+import categoryServices from "../services/categoryServices";
 
 export default function Footer() {
   const { header } = useContext(HeaderContext);
@@ -20,18 +20,11 @@ export default function Footer() {
 
   const getCategory = async () => {
     try {
-      const response = await APIRequest.get("/category/getcategory");
-
+      const response = await categoryServices.getCategory();
       // handle success
       setCategories(response.data);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching category:", err);
     }
   };
 
@@ -48,7 +41,7 @@ export default function Footer() {
       }}
       align="center"
     >
-      {header.variant != "admin" ? (
+      {header.variant !== "admin" ? (
         <Grid container spacing={5} maxWidth="lg" align="left">
           <Grid item xs={12} md={4} sm={12}>
             <Typography

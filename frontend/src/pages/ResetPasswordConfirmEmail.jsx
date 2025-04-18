@@ -8,13 +8,11 @@ import {
   AlertTitle,
   Box,
 } from "@mui/material";
-import { NavLink, Link as RouterLink, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import HeaderLogReg from "../components/HeaderLogReg";
 import React, { useState, useEffect } from "react";
-import { Email } from "@mui/icons-material";
 import SetContextHeader from "../components/SetContextHeader";
-import { APIRequest } from "../api/post";
+import userServices from "../services/userServices";
 
 function ResetPasswordConfirmEmail() {
   const [email, setEmail] = useState();
@@ -48,8 +46,7 @@ function ResetPasswordConfirmEmail() {
     if (isEmailFormat) {
       try {
         console.log(data);
-        let response = await APIRequest.post("/User/checkemailreset", data);
-        console.log(response);
+        let response = await userServices.checkEmailReset(data);
         setIsRegistered(response.data);
         if (response.data === false) {
           setIsError(true);
@@ -60,10 +57,10 @@ function ResetPasswordConfirmEmail() {
           handleClickOpen();
           // navigate("/login");
         }
-      } catch (error) {
-        console.log(error);
+      } catch (err) {
+        console.error("Error during checking email:", err);
         setIsError(true);
-        setErrMessage(error.response.data);
+        setErrMessage(err.response.data);
       }
     } else {
       setIsError(true);

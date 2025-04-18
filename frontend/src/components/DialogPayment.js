@@ -14,9 +14,10 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
-import { APIRequest } from "../api/post";
+import apiExport from "../api/post";
 import { Box } from "@mui/system";
 import { PaymentTwoTone } from "@mui/icons-material";
+import paymentServices from "../services/paymentServices";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -34,27 +35,15 @@ export default function DialogPayment({
   const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-    if(open)
-      getPayment();
+    if (open) getPayment();
   }, [open]);
 
   const getPayment = async () => {
     try {
-      const response = await APIRequest.get("/paymentmethod/getPayment");
-
-      const payments = response.data.filter(
-        (payment) => payment.status == true
-      );
+      const payments = await paymentServices.getActivePayments();
       setPayments(payments);
-      // console.log(response.data);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching active payment methods:", err);
     }
   };
   const handleSelectPayment = (index) => {
@@ -88,7 +77,7 @@ export default function DialogPayment({
                 onClick={() => handleSelectPayment(payment.id_payment_method)}
               >
                 <ListItemIcon>
-                  <img src={payment.logo} width="20px" />
+                  <img src={payment.logo} width="20px" alt={payment.nama} />
                 </ListItemIcon>
                 <ListItemText primary={payment.nama} />
               </ListItemButton>

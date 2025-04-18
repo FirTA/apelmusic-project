@@ -1,11 +1,3 @@
-import {
-  Typography,
-  Dialog,
-  Alert,
-  AlertTitle,
-  Box,
-  Button,
-} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";

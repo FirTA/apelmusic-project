@@ -17,10 +17,11 @@ import DialogActions from "@mui/material/DialogActions";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import SettingsIcon from "@mui/icons-material/Settings";
-import { Container } from "@mui/system";
+
 import { IconButton, Typography } from "@mui/material";
 import Footer from "../../components/Footer";
-import { APIRequest } from "../../api/post";
+
+import paymentServices from "../../services/paymentServices";
 
 export default function Payment() {
   const [payments, setPayments] = useState([]);
@@ -39,54 +40,19 @@ export default function Payment() {
 
   const getPayment = async () => {
     try {
-      const response = await APIRequest.get("/paymentmethod/getPayment");
-
+      const response = await paymentServices.getPayment();
       setPayments(response.data);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching payment methods:", err);
     }
   };
 
   const handleSwitch = async (id_payment_method, status) => {
-    const data = {
-      status: !status,
-    };
-
     try {
-      let response = await APIRequest.put(
-        "/paymentmethod/ChangeStatusPayment?id_payment_method=" +
-          id_payment_method,
-        data
-      );
-
+      await paymentServices.changeStatusPayment(id_payment_method, !status);
       getPayment();
     } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const saveToDb = async () => {
-    const data = {
-      nama: formData.nama,
-      logo: imageBase64,
-    };
-
-    try {
-      let response = await APIRequest.post(
-        "/paymentmethod/insertpayment",
-        data
-      );
-
-      getPayment();
-      setOpen(false);
-    } catch (error) {
-      console.log(error);
+      console.error("Error changing payment status:", error);
     }
   };
 
@@ -134,6 +100,21 @@ export default function Payment() {
     setIdPaymentMethod(payment[0].id_payment_method);
   }
 
+  const saveToDb = async () => {
+    const data = {
+      nama: formData.nama,
+      logo: imageBase64,
+    };
+
+    try {
+      await paymentServices.insertPayment(data);
+      getPayment();
+      setOpen(false);
+    } catch (error) {
+      console.error("Error saving payment method:", error);
+    }
+  };
+
   const updateToDb = async () => {
     const data = {
       nama: formData.nama,
@@ -141,15 +122,11 @@ export default function Payment() {
     };
 
     try {
-      let response = await APIRequest.put(
-        "/paymentmethod/updatepayment?id_payment_method=" + idPaymentMethod,
-        data
-      );
-
+      await paymentServices.updatePayment(idPaymentMethod, data);
       getPayment();
       setOpen(false);
     } catch (error) {
-      console.log(error);
+      console.error("Error updating payment method:", error);
     }
   };
 
@@ -249,7 +226,11 @@ export default function Payment() {
                         {payment.nama}
                       </TableCell>
                       <TableCell align="center">
-                        <img src={payment.logo} height="20px" />
+                        <img
+                          src={payment.logo}
+                          height="20px"
+                          alt={payment.nama}
+                        />
                       </TableCell>
                       <TableCell align="center">
                         <IconButton
@@ -299,11 +280,7 @@ export default function Payment() {
             onChange={onPickImage}
             sx={{ mb: 3 }}
           />
-          <img
-            src={imageBase64}
-            alt="logo image"
-            style={{ maxWidth: "150px" }}
-          />
+          <img src={imageBase64} alt="logo" style={{ maxWidth: "150px" }} />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>

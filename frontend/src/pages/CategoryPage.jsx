@@ -1,14 +1,9 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-import api from "../api/post";
-import { APIRequest } from "../api/post";
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 import Footer from "../components/Footer";
 import CardCourse from "../components/CardCourse";
@@ -18,6 +13,8 @@ import { useParams } from "react-router-dom";
 import SetContextHeader from "../components/SetContextHeader";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import categoryServices from "../services/categoryServices";
+import courseServices from "../services/courseServices";
 
 export default function CategoryPage() {
   const [categories, setCategories] = useState({});
@@ -33,41 +30,25 @@ export default function CategoryPage() {
 
   const getCategory = async () => {
     try {
-      const response = await APIRequest.get("/category/getcategory");
+      const response = await categoryServices.getCategory();
       // handle success
       let category = response.data.filter(
-        (course) => course.id_category == params.id
+        (course) => course.id_category === params.id
       );
 
       setCategories(category[0]);
       setBackdrop(false);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching category:", err);
     }
   };
 
   const getKelasTersedia = async () => {
     try {
-      const response = await APIRequest.get("/course/getcourse");
-      // handle success
-      let favoriteCourses = response.data.filter(
-        (course) => course.fk_id_category == params.id
-      );
+      const favoriteCourses = await courseServices.getFavoriteCourse();
       setFavoriteCourse(favoriteCourses);
     } catch (err) {
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching available courses:", err);
     }
   };
   return (

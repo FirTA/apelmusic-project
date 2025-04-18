@@ -6,23 +6,20 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-import axios from "axios";
-import { APIRequest, APIRequestWithHeaders } from "../api/post";
-import { useState, useRef, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 
 import { Link as RouterLink } from "react-router-dom";
 
 import MainFeaturedPost from "../components/MainFeaturedPost";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CardCourse from "../components/CardCourse";
 import SetContextHeader from "../components/SetContextHeader";
-import useAuth from "../hooks/useAuth";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import categoryServices from "../services/categoryServices";
+import courseServices from "../services/courseServices";
 
-export default function Index() {
-  const { auth } = useAuth();
+export default function HomePage() {
   const [categories, setCategories] = useState([]);
   const [favoriteCourse, setFavoriteCourse] = useState([]);
   const [backdrop, setBackdrop] = useState(true);
@@ -43,47 +40,21 @@ export default function Index() {
 
   const getCategory = async () => {
     try {
-      const response = await APIRequest.get(
-        "/category/getcategory"
-        // {
-        //   headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        // }
-      );
-      // console.log(response);
+      const response = await categoryServices.getCategory();
       setCategories(response.data);
     } catch (err) {
-      console.log(err);
-      if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
-      }
+      console.error("Error fetching categories:", err);
     }
   };
 
   const getFavoriteCourse = async () => {
     try {
-      const response = await APIRequest.get(
-        "/course/getcourse"
-        // {
-        //   headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        // }
-      );
-
-      let favoriteCourses = response.data.filter(
-        (course) => course.favorit === true
-      );
+      const favoriteCourses = await courseServices.getFavoriteCourse();
       setFavoriteCourse(favoriteCourses);
       setBackdrop(false);
     } catch (err) {
       if (err.response) {
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else {
-        console.log(`Error : ${err.message}`);
+        console.error("Error fetching favorite courses:", err);
       }
     }
   };
@@ -192,6 +163,7 @@ export default function Index() {
                   loading="lazy"
                   width="363px"
                   height="363px"
+                  alt="Benefit illustration"
                 />
               </Grid>
               <Grid item md={8} sm={8} sx={{ p: 5 }}>
