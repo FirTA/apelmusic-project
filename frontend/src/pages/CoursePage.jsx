@@ -24,7 +24,15 @@ export default function CoursePage() {
   const navigate = useNavigate();
   const [backdrop, setBackdrop] = useState(true);
   const [open, setOpen] = React.useState(false);
-  const [course, setCourse] = useState({});
+  const [course, setCourse] = useState({
+    id_course: "",
+    fk_id_category: "",
+    nama_course: "",
+    deskripsi_course: "",
+    harga: "",
+    image_course: "",
+    nama_category: "",
+  });
   const [recommendedCourse, setRecommendedCourse] = useState([]);
   const [courseUser, setCourseUser] = useState([]);
   const params = useParams();
@@ -35,10 +43,14 @@ export default function CoursePage() {
   const role = localStorage.getItem("role") ?? "guest";
   const [formData, setFormData] = useState({
     fk_id_user: localStorage.getItem("id_user") ?? "0",
-    fk_id_course: course.id_course,
+    fk_id_course: "",
     waktu: jadwal,
     checked: "",
   });
+
+  useEffect(() => {
+    console.log("params: ", params.id);
+  }, []);
 
   const numberToRupiah = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -109,7 +121,7 @@ export default function CoursePage() {
   };
 
   useEffect(() => {
-    getCourse();
+    getCourse(params.id);
     getCourseUser();
     generateDates();
     setJadwal("");
@@ -133,13 +145,10 @@ export default function CoursePage() {
     setJadwal(e.target.value);
   }
 
-  const getCourse = async () => {
+  const getCourse = async (id) => {
     try {
-      const response = await courseServices.getCourse();
-      let course = response.data.filter(
-        (course) => course.id_course === params.id
-      );
-      setCourse(course[0]);
+      const response = await courseServices.getCourseById(id);
+      setCourse(response.data[0]);
       setBackdrop(false);
     } catch (err) {
       console.error("Error fetching course:", err);

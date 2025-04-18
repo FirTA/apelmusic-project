@@ -33,6 +33,26 @@ namespace apelmusic.Controllers
 
         #region SqlDataReader
         [HttpGet]
+        [Route("GetCourseById/{id_course}")]
+        //[Authorize]
+        public ActionResult GetCourseById(int id_course)
+        {
+            try
+            {
+                //ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
+                List<Course> result = new List<Course>(); // initialisasi array kosong
+                result = CourseLogic.GetCourseById(id_course);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        #endregion
+
+        #region SqlDataReader
+        [HttpGet]
         [Route("GetCourseUser")]
         public ActionResult GetCourseUser(int id_user)
         {

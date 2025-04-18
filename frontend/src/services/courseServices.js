@@ -1,7 +1,7 @@
 import { axiosInstance } from "../api/post";
 
 const getCourse = () => axiosInstance.get("/course/getcourse");
-const getCourseById = (id) => axiosInstance.get(`/course/getcourse/${id}`);
+const getCourseById = (id) => axiosInstance.get(`/course/getcoursebyid/${id}`);
 const getFavoriteCourse = () =>
   axiosInstance.get("/course/getcourse").then((response) => {
     return response.data.filter((course) => course.favorit === true);

@@ -51,6 +51,39 @@ namespace apelmusic.Logics
             return result;
         }
 
+
+        public static List<Course> GetCourseById (int id_course)
+        {
+            List<Course> result = new List<Course>();
+            string query = "SELECT id_course, fk_id_category, nama_course, harga, image_course, deskripsi_course, nama_category, favorit FROM " +
+                "Apelmusic.Courses Course JOIN Apelmusic.Categories Category ON Course.fk_id_category = Category.id_category where id_course = @id_course";
+            NpgsqlParameter[] sqlParams = new NpgsqlParameter[]
+            {
+                new NpgsqlParameter{ ParameterName = "@id_course", NpgsqlDbType = NpgsqlDbType.Integer, Value = id_course },
+            };
+
+            DataTable dataTable = CRUD.ExecuteQuery(query, sqlParams);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Course tempData = new Course
+                {
+                    id_course = (int)row["id_course"],
+                    fk_id_category = (int)row["fk_id_category"],
+                    nama_category = (string)row["nama_category"],
+                    nama_course = (string)row["nama_course"],
+                    harga = (decimal)row["harga"],
+                    image_course = (string)row["image_course"],
+                    deskripsi_course = (string)row["deskripsi_course"],
+                    favorit = (bool)row["favorit"],
+                };
+
+                result.Add(tempData);
+            }
+
+            return result;
+        }
+
         public static List<CourseUser> GetCourseUser(int id_user)
         {
             List<CourseUser> result = new List<CourseUser>(); // initialisasi array kosong
