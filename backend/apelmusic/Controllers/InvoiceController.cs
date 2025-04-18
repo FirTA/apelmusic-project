@@ -35,7 +35,7 @@ namespace apelmusic.Controllers
         [HttpGet]
         [Route("GetInvoice")]
         [Authorize(Roles = "admin,peserta")]
-        public ActionResult GetInvoice([FromQuery] string? id_user)
+        public ActionResult GetInvoice([FromQuery] int? id_user)
         {
             try
             {

@@ -70,7 +70,7 @@ namespace apelmusic.Logics
 
             #region query process to database
             // handle query
-            string query = "SELECT * FROM apelmusic.user WHERE [role] = 'admin' ORDER BY nama_user ASC";
+            string query = "SELECT * FROM apelmusic.user WHERE role = 'admin' ORDER BY nama_user ASC";
 
             // execute query and map the data to result
             DataTable dataTable = CRUD.ExecuteQuery(query);

@@ -47,19 +47,19 @@ namespace apelmusic.Logics
                         }
                         reader.Close();
 
-                        cmd.CommandText = "INSERT INTO Apelmusic.Invoice(fk_id_user, fk_id_payment_method, no_invoice, tgl_invoice) VALUES (@fk_id_user, @fk_id_payment_method, @no_invoice, @tgl_invoice); SELECT SCOPE_IDENTITY();";
-                        cmd.Parameters.Add(new NpgsqlParameter("@fk_id_user", NpgsqlDbType.Varchar) { Value = invoice.fk_id_user });
-                        cmd.Parameters.Add(new NpgsqlParameter("@fk_id_payment_method", NpgsqlDbType.Varchar) { Value = invoice.fk_id_payment_method });
-                        cmd.Parameters.Add(new NpgsqlParameter("@no_invoice", NpgsqlDbType.Varchar) { Value = no_invoice + 1 });
-                        cmd.Parameters.Add(new NpgsqlParameter("@tgl_invoice", SqlDbType.Date) { Value = invoice.tgl_invoice });
+                        cmd.CommandText = "INSERT INTO Apelmusic.Invoice(fk_id_user, fk_id_payment_method, no_invoice, tgl_invoice) VALUES (@fk_id_user, @fk_id_payment_method, @no_invoice, @tgl_invoice) RETURNING id_invoice;";
+                        cmd.Parameters.Add(new NpgsqlParameter("@fk_id_user", NpgsqlDbType.Integer) { Value = invoice.fk_id_user });
+                        cmd.Parameters.Add(new NpgsqlParameter("@fk_id_payment_method", NpgsqlDbType.Integer) { Value = invoice.fk_id_payment_method });
+                        cmd.Parameters.Add(new NpgsqlParameter("@no_invoice", NpgsqlDbType.Integer) { Value = no_invoice + 1 });
+                        cmd.Parameters.Add(new NpgsqlParameter("@tgl_invoice", NpgsqlDbType.Date) { Value = DateTime.Parse(invoice.tgl_invoice) });
 
-                        decimal pk_id_invoice = (decimal)cmd.ExecuteScalar(); // SCOPE_IDENTITY() type is decimal
+                        int pk_id_invoice = (int)cmd.ExecuteScalar(); // SCOPE_IDENTITY() type is decimal
                         cmd.Parameters.Clear();
 
                         foreach (DetailInvoice detailInvoice in invoice.detailInvoice)
                         {
                             cmd.CommandText = "INSERT INTO Apelmusic.DetailInvoice(fk_id_invoice, fk_id_course_user, harga) VALUES (@fk_id_invoice, @fk_id_course_user, @harga)";
-                            cmd.Parameters.Add(new NpgsqlParameter("@fk_id_invoice", NpgsqlDbType.Varchar) { Value = pk_id_invoice });
+                            cmd.Parameters.Add(new NpgsqlParameter("@fk_id_invoice", NpgsqlDbType.Integer) { Value = pk_id_invoice });
                             cmd.Parameters.Add(new NpgsqlParameter("@fk_id_course_user", NpgsqlDbType.Integer) { Value = detailInvoice.fk_id_course_user });
                             cmd.Parameters.Add(new NpgsqlParameter("@harga", NpgsqlDbType.Integer) { Value = detailInvoice.harga });
 
@@ -67,10 +67,16 @@ namespace apelmusic.Logics
                             cmd.Parameters.Clear();
 
                             cmd.CommandText = "UPDATE Apelmusic.CourseUser SET status = 'purchased' WHERE id_course_user = @id_course_user";
-                            cmd.Parameters.Add(new NpgsqlParameter("@id_course_user", NpgsqlDbType.Varchar) { Value = detailInvoice.fk_id_course_user });
+                            cmd.Parameters.Add(new NpgsqlParameter("@id_course_user", NpgsqlDbType.Integer) { Value = detailInvoice.fk_id_course_user });
                             cmd.ExecuteNonQuery();
                             cmd.Parameters.Clear();
                         }
+
+                        cmd.CommandText = "UPDATE Apelmusic.DetailInvoice di SET nama_category = ca.nama_category, nama_course = co.nama_course, waktu = cu.waktu FROM Apelmusic.CourseUser cu JOIN Apelmusic.Courses co ON co.id_course = cu.fk_id_course\r\nJOIN Apelmusic.categories ca ON ca.id_category = co.fk_id_category\r\nWHERE di.fk_id_course_user = cu.id_course_user AND di.fk_id_invoice = @fk_id_invoice";
+                        cmd.Parameters.Add(new NpgsqlParameter("@fk_id_invoice", NpgsqlDbType.Integer) { Value = pk_id_invoice });
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+
 
                         cmd.Transaction.Commit();
                         con.Close();
@@ -88,14 +94,14 @@ namespace apelmusic.Logics
             } // end NpgsqlConnection
         }
 
-        public static List<Invoice> GetInvoice(string? id_user)
+        public static List<Invoice> GetInvoice(int? id_user)
         {
             List<Invoice> result = new List<Invoice>(); // initialisasi array kosong
 
             #region query process to database
             // handle query
             string query = "SELECT id_invoice, fk_id_user, fk_id_payment_method, no_invoice, tgl_invoice FROM Apelmusic.Invoice";
-            if (!String.IsNullOrEmpty(id_user))
+            if (!id_user.HasValue)
             {
                 query += " WHERE fk_id_user = @fk_id_user";
             }
@@ -103,7 +109,7 @@ namespace apelmusic.Logics
             // create sql params
             NpgsqlParameter[] sqlParams = new NpgsqlParameter[]
             {
-                new NpgsqlParameter("@fk_id_user", NpgsqlDbType.Varchar) { Value = id_user??"" }
+                new NpgsqlParameter("@fk_id_user", NpgsqlDbType.Integer) { Value = id_user }
             };
 
             // execute query and map the data to result
