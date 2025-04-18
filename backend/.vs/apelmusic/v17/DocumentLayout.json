@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|d:\\project\\web app\\apelmusic\\apelmusic-project\\backend\\apelmusic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{641E70E5-B918-4210-B27C-80B7F45EA7AD}|apelmusic\\apelmusic.csproj|solutionrelative:apelmusic\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -66,11 +70,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Program.cs",
+              "RelativeDocumentMoniker": "apelmusic\\Program.cs",
+              "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Program.cs",
+              "RelativeToolTip": "apelmusic\\Program.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAABEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T18:17:07.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "apelmusic.csproj",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\apelmusic.csproj",
               "RelativeDocumentMoniker": "apelmusic\\apelmusic.csproj",
@@ -82,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "EmailLogic.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\EmailLogic.cs",
               "RelativeDocumentMoniker": "apelmusic\\Logics\\EmailLogic.cs",
@@ -94,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "apelmusic\\Controllers\\UserController.cs",
@@ -106,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "InvoiceLogic.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\InvoiceLogic.cs",
               "RelativeDocumentMoniker": "apelmusic\\Logics\\InvoiceLogic.cs",
@@ -118,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CourseLogic.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\CourseLogic.cs",
               "RelativeDocumentMoniker": "apelmusic\\Logics\\CourseLogic.cs",
@@ -130,20 +147,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\appsettings.json",
               "RelativeDocumentMoniker": "apelmusic\\appsettings.json",
               "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\appsettings.json",
               "RelativeToolTip": "apelmusic\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAACVAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAkwBcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-09T05:35:02.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T05:35:02.776Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "CourseController.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\CourseController.cs",
               "RelativeDocumentMoniker": "apelmusic\\Controllers\\CourseController.cs",
@@ -155,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "UserLogic.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\UserLogic.cs",
               "RelativeDocumentMoniker": "apelmusic\\Logics\\UserLogic.cs",
@@ -167,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "InvoiceController.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\InvoiceController.cs",
               "RelativeDocumentMoniker": "apelmusic\\Controllers\\InvoiceController.cs",
@@ -179,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PaymentMethodController.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Controllers\\PaymentMethodController.cs",
               "RelativeDocumentMoniker": "apelmusic\\Controllers\\PaymentMethodController.cs",
@@ -191,19 +207,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Course.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\Course.cs",
               "RelativeDocumentMoniker": "apelmusic\\Models\\Course.cs",
               "ToolTip": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\Course.cs",
               "RelativeToolTip": "apelmusic\\Models\\Course.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA7wA4AAAAbAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA5wA4AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T07:37:25.691Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CRUD.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\CRUD.cs",
               "RelativeDocumentMoniker": "apelmusic\\Models\\CRUD.cs",
@@ -215,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Invoice.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Models\\Invoice.cs",
               "RelativeDocumentMoniker": "apelmusic\\Models\\Invoice.cs",
@@ -227,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "JwtLogic.cs",
               "DocumentMoniker": "D:\\Project\\Web App\\Apelmusic\\apelmusic-project\\backend\\apelmusic\\Logics\\JwtLogic.cs",
               "RelativeDocumentMoniker": "apelmusic\\Logics\\JwtLogic.cs",

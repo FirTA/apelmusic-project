@@ -168,3 +168,16 @@ D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\obj\Debug\net7.
 D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\obj\Debug\net7.0\apelmusic.pdb
 D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\obj\Debug\net7.0\apelmusic.genruntimeconfig.cache
 D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\obj\Debug\net7.0\ref\apelmusic.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.AspNetCore.DataProtection.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.Bcl.Cryptography.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\System.Formats.Asn1.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+D:\Project\Web App\Apelmusic\apelmusic-project\backend\apelmusic\bin\Debug\net7.0\System.Security.Cryptography.Xml.dll
