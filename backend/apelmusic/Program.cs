@@ -58,9 +58,13 @@ builder.Services.AddAuthentication(options =>
         ClockSkew = TimeSpan.Zero,
     };
 });
+
+string keyPath = configuration["DataProtection:KeyPath"] ?? Path.Combine(builder.Environment.ContentRootPath, "keys");
+Directory.CreateDirectory(keyPath);
+
 builder.Services.AddDataProtection()
-    .PersistKeysToFileSystem(new DirectoryInfo("/root/.aspnet/DataProtection-Keys"))
-    .SetApplicationName("MyApp");
+    .PersistKeysToFileSystem(new DirectoryInfo(keyPath))
+    .SetApplicationName("apelmusic");
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
