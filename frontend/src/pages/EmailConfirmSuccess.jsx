@@ -23,7 +23,7 @@ function EmailConfirmSuccess() {
   //   console.log(token);
   // }, [token]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     activateUser(token);
   }, []);
 

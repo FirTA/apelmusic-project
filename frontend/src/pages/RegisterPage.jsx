@@ -12,16 +12,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import HeaderLogReg from "../components/HeaderLogReg";
 import SetContextHeader from "../components/SetContextHeader";
-import { APIRequest } from "../api/post";
 import { useNavigate } from "react-router-dom";
 import userServices from "../services/userServices";
 
 function RegisterPage() {
   const [user, setUser] = useState({
-    "nama user": "",
+    nama_user: "",
     email: "",
     password: "",
-    "konfirmasi password": "",
+    konfirmasi_password: "",
   });
   const [message, setMessage] = useState({});
   const [errorField, setErrorField] = useState({});
@@ -112,7 +111,7 @@ function RegisterPage() {
 
       // check email is register or not
       try {
-        let emailCheck = await userServices.checkEmail({ email: user.email });
+        const emailCheck = await userServices.checkEmail(user.email);
         if (emailCheck.data === true) {
           handleErrorWithMsg("email", true, "email sudah digunakan!");
           return;
@@ -124,23 +123,22 @@ function RegisterPage() {
     }
 
     const data = {
-      nama_user: user["nama user"],
+      nama_user: user.nama_user,
       email: user.email,
       password: user.password,
     };
 
-    if (user.password !== user["konfirmasi password"]) {
+    if (user.password !== user.konfirmasi_password) {
       handleErrorWithMsg(
-        "konfirmasi password",
+        "konfirmasi_password",
         true,
         "Konfirmasi password berbeda!"
       );
       return;
     } else {
-      handleErrorWithMsg("konfirmasi password", false, "");
+      handleErrorWithMsg("konfirmasi_password", false, "");
     }
 
-    // console.log("is valid data :", isValidData());
     if (isValidData()) {
       try {
         await userServices.register(data);
@@ -149,29 +147,6 @@ function RegisterPage() {
         console.error("Error during registration:", error);
       }
     }
-
-    // let formData = new FormData();
-    // formData.append("nama_user", user.nama_user);
-    // formData.append("email", user.email);
-    // formData.append("password", user.password);
-
-    // Axios({
-    //   method: "POST",
-    //   url: "/User/Registration",
-    //   data: formData,
-    //   headers: {
-    //     "Content-Type": "multipart/form-data",
-    //     // Authorization: AUTH_TOKEN,
-    //   },
-    // })
-    //   .then((res) => {
-    //     if (res.status === 200) {
-    //       console.log("save success");
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   };
 
   return (
@@ -197,7 +172,7 @@ function RegisterPage() {
           }}
         >
           <TextField
-            id="nama user"
+            id="nama_user"
             placeholder="Masukan Nama Lengkap"
             sx={{ pb: 2 }}
             size="small"
@@ -229,15 +204,15 @@ function RegisterPage() {
             helperText={errorField.password ? message.password : null}
           ></TextField>
           <TextField
-            id="konfirmasi password"
+            id="konfirmasi_password"
             placeholder="Konfirmasi Password"
             sx={{ pb: 2 }}
             size="small"
             type="password"
             onChange={inputEvent}
-            error={errorField["konfirmasi password"]}
+            error={errorField["konfirmasi_password"]}
             helperText={
-              errorField["konfirmasi password"]
+              errorField["konfirmasi_password"]
                 ? message["konfirmasi password"]
                 : null
             }
@@ -248,7 +223,7 @@ function RegisterPage() {
             variant="contained"
             sx={{ backgroundColor: "#5D5FEF" }}
             size="medium"
-            onClick={saveToDB}
+            onClick={() => saveToDB()}
           >
             <Typography
               sx={{
