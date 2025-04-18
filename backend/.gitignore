@@ -21,6 +21,7 @@ artifacts/
 # Sensitive settings
 appsettings.Development.json
 appsettings.Local.json
+appsettings*.json
 *.Development.json
 *.Local.json
 
